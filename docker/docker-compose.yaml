@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  sql:
+    image: mysql:latest
+    ports:
+      - 3306:3306
+    volumes:
+      - ../DB/Data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
