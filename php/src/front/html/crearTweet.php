@@ -169,17 +169,16 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <div class="form-group">
+                                <form id="tweet_form" action="./guardarTweet.php" method="post">
                                     <label class="col-md-12">Type your tweet</label>
                                     <div class="col-md-12">
-                                        <textarea rows="5" class="form-control form-control-line"></textarea>
+                                        <textarea name="tweet_desc" id="tweet_desc" rows="5" maxlength=300 class="form-control form-control-line"></textarea>
                                     </div>
                                     <br/><br/>
-                                    <div class="form-group">
                                         <div class="col-sm-12">
-                                            <button class="btn btn-success text-white">Tweet</button>
+                                            <button class="btn btn-success text-white" type="submit">Tweet</button>
                                         </div>
-                            </div>
+                                </form>
                         </div>
                     </div>
                 </div>
