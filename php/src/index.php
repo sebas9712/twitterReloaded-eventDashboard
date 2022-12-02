@@ -5,16 +5,28 @@
 $host = 'db';
 
 // Database use name
-$user = 'MYSQL_USER';
+$user = 'root';
 
 //database user password
-$pass = 'MYSQL_PASSWORD';
+$pass = 'root';
+
+
 
 // check the MySQL connection status
-$conn = new mysqli($host, $user, $pass);
+$conn = new mysqli($host, $user, $pass, 'Twitter_Db');
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } else {
     echo "Connected to MySQL server successfully!";
+    // $query = "INSERT INTO Users (name, username, password) VALUES ('Genaro', 'GenaroSanudo', 'pass123')";
+    $query = "INSERT INTO Tweets (description) VALUES ('blablablala')";
+    $resultado = mysqli_query($conn, $query);
+
+    $query = "SELECT * FROM Tweets";
+    $result = mysqli_query($conn, $query);
+
+    while($row = mysqli_fetch_array($result)) {
+        echo print_r($row);       // Print the entire row data
+    }
 }
 ?>
