@@ -16,11 +16,14 @@
         } else {
         $_SESSION['user'] = $username;
         $_SESSION['pass'] = $password;
-        
-        $queryE = "INSERT INTO `Events`(`id_event`, `username`, `type_interaction`, `timestamp`, `id_tweet`, `id_reply`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]')";
+        //echo "entra";
+
+        $time = time();
+        $queryE = "INSERT INTO `Events`( `username`, `type_interaction`, `timestamp`) VALUES (\"$username\",0,now())";
         $result = consultaBaseDatos($queryE);
         
         header("Location:../front/html/principal.html");
+
     }
 
 ?>
